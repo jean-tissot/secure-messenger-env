@@ -34,16 +34,10 @@ CREATE TABLE messages (
     PRIMARY KEY(id)
 );
 
-CREATE TABLE roles (
-    id SERIAL,
-    name text,
-    PRIMARY KEY(id)
-);
-
 CREATE TABLE user_group (
     group_id INTEGER REFERENCES groups(id),
     user_id INTEGER REFERENCES users(id),
-    role_id INTEGER REFERENCES roles(id),
+    role_id INTEGER,
     last_received_id INTEGER REFERENCES messages(id),
     last_read_id INTEGER REFERENCES messages(id),
     PRIMARY KEY (group_id, user_id)
