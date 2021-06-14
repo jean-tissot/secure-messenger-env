@@ -2,7 +2,7 @@ db:
     restart: always
     image: postgres
     environment:
-        - POSTGRES_USER=secure_messenger_app
+        - POSTGRES_USER=secure_messenger_admin
         - POSTGRES_PASSWORD=a_changer
         - POSTGRES_DB=secure_messenger_db
     volumes:
