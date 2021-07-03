@@ -5,6 +5,15 @@ CREATE TABLE users (
     PRIMARY KEY(id)
 );
 
+CREATE TABLE accounts (
+    username TEXT,
+    password TEXT,
+    user_id INTEGER REFERENCES users(id),
+    creation_date TIMESTAMP,
+    enabled BOOLEAN,
+    PRIMARY KEY(username)
+);
+
 CREATE TABLE friends (
     user1_id INTEGER REFERENCES users(id),
     user2_id INTEGER REFERENCES users(id),

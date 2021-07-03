@@ -16,3 +16,9 @@ INSERT INTO user_group(group_id, user_id, role_id) VALUES
     ((SELECT id FROM groups WHERE name = 'Les rats'), (SELECT id FROM users WHERE pseudo = 'Jules'), 0),
     ((SELECT id FROM groups WHERE name = ''), (SELECT id FROM users WHERE pseudo = 'René'), 1),
     ((SELECT id FROM groups WHERE name = ''), (SELECT id FROM users WHERE pseudo = 'Yves-Albert'), 1);
+
+INSERT INTO accounts(username, password, user_id, enabled) VALUES
+    ('paul', 'pass', (SELECT id FROM users WHERE pseudo = 'Paul'), true),
+    ('rené', 'my_pass', (SELECT id FROM users WHERE pseudo = 'René'), true),
+    ('juju', 'password', (SELECT id FROM users WHERE pseudo = 'Jules'), true),
+    ('y-a', 'azerty', (SELECT id FROM users WHERE pseudo = 'Yves-Albert'), true);
